@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            padding: 50px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f4f4f4;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 110px;
+            right: 110px;
+            font-size: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .menu-icon::after {
+            content: "☰";
+        }
+        #menu-toggle:checked + .menu-icon::after {
+            content: "✖";
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease-in-out;
+        }
+        #menu-toggle:checked ~ .menu-overlay {
+        transform: translateY(0);
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover, .menu a.active {
+            text-decoration: underline;
+        }
+        .close-btn {
+            position: absolute;
+            top: 102px;
+            right: 106px;
+            font-size: 80px;
+            cursor: pointer;
+        }
+        .content {
+            margin-top: 90px;
+            padding-left: 20px;
+            font-size: 60px;
+            font-family: Arial, sans-serif;
+        }
+        .category-menu {
+            display: flex;
+            padding-left: 20px;
+            gap: 20px;
+            list-style: none;
+            margin-top: 80px;
+        }
+
+        .category-menu li {
+            position: relative;
+            font-size: 16px;
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.788);
+            padding-bottom: 2px;
+        }
+
+        .category-menu li::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;  
+            height: 1px;
+            background: rgba(0, 0, 0, 0.788);
+            transition: width 0.3s ease-in-out; 
+        }
+
+        .category-menu li:hover::after {
+            width: 100%;
+        }
+
+        .category-menu li.active::after {
+            width: 100%; 
+        }
+
+        .category-menu li.active:hover::after {
+            width: 100%; 
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/06/Kalium-Theme-Icon.png" class="main-logo" width="50" height="50" alt="Kalium" style></div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"></label>
+            <div class="menu-overlay">
+            <label for="menu-toggle" class="close-btn">&times;</label>
+            <ul class="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Buy Now!</a></li>
+                <li><a href="#">Search ...</a></li>
+            </ul>
+            </div>
+        </div>
+        
+        <div class="content">
+            Clear thinking at the wrong moment can stifle <span style="background:black; color:white; padding:5px;">creativity_</span>
+        </div>
+        <ul class="category-menu">
+            <li class="active">All</li>
+            <li>Branding</li>
+            <li>Digital Art</li>
+            <li>Photography</li>
+            <li>Print</li>
+        </ul>
+        <div class="grid-container">
+            <div class="grid-item"><img src="https://file.hstatic.net/1000231532/file/20220804-top-nhan-thuat-cua-uchiha-sasuke_nshop10_2dfbb8c8c59f4222a3c2db0771395892.jpg" alt="Image 1"></div>
+            <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhePUTqMBx4h7KflZcAj_n5DFwvXXHjwvwA&s" alt="Image 2"></div>
+            <div class="grid-item"><img src="https://i.pinimg.com/736x/11/11/dc/1111dc1ef2cb6e9fadce6592513025d9.jpg" alt="Image 3"></div>
+            <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbeFN4daqKroAc34_kiwqeEhTRwFxZ0jtKAw&s" alt="Image 4"></div>
+            <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpintK08R5DFNQspBXXSTd3DT9UsOHPx7YfA&s" alt="Image 5"></div>
+            <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDfTY0v-LwI0Gr8W0dIo3nfflZgf0bBgghiw&s" alt="Image 6"></div>
+        </div>
+        <span class="heart-icon">♡</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+img{
+    text-align: center;
+    height: 500px;
+    weight: 600px;
+}
+.bd{
+   border-right-color: green;
+}
+body {  
+    margin: 50px 373px 100px 300px;
+}
+.anh{
+    text-align: center;
+    height: 200px;
+    weight:300px;
+}

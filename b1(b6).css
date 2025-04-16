@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  display: flex;
+  background-color: #f5f5f5;
+}
+.he {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #f8f4ff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  gap: 15px;
+}
+.menu-item {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 45%;
+  cursor: pointer;
+}
+.menu-item i {
+  font-size: 24px;
+  color: #333;
+}
+.menu-item span {
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+}
+.menu-item:hover, .menu-item.active {
+  background-color: rgba(188, 206, 251);
+}
+.lo {
+  margin-left: 120px;
+  padding: 30px;
+  width: 100%;
+}
+.helo {
+  display: flex;
+  align-items: center;
+  background-color: #f8eefc;
+  padding: 40px;
+  border-radius: 15px;
+  gap: 20px;
+}
+.helo-text {
+  flex: 1;
+}
+.helo-text h1 {
+  font-size: 55px;
+  color: #222;
+}
+.helo-text p {
+  font-size: 25px;
+  color: #555;
+  margin: 20px 0;
+}
+.btn {
+  background-color: #673ab7;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.helo-video video {
+  width: 600px;
+  border-radius: 20px;
+}
+.news {
+  margin-top: 40px;
+}
+.news h2 {
+  font-size: 32px;
+  color: #222;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.card {
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.card-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+.img1 { background-image: url('https://images.pond5.com/abstract-colorful-fluid-background-animation-footage-281225163_iconl.jpeg'); }
+.img2 { background-image: url('https://pbs.twimg.com/amplify_video_thumb/1892336592041246721/img/561ltU3_W1O9sDwe.jpg'); }
+.img3 { background-image: url('https://cdn-thumbs.ohmyprints.net/1/16cef358d64db1a9fc9e4f86c8e785e5/360x360/thumbnail/fit.jpg'); }
+.img4 { background-image: url('https://media.istockphoto.com/id/1387621990/sv/vektor/vector-illustration-abstract-contemporary-aesthetic-backgrounds-design-for-cover-poster.jpg?s=170667a&w=0&k=20&c=r269HBpaufxyBYjg-oVuXqiaEpqaFEJ3IS91HKRC4dY='); }
+.img5 { background-image: url('https://lianna-adams.com/wp-content/uploads/2022/12/Lianna_Red-Sea-1024x1024.png'); }
+.img6 { background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/afa2b285573235.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg'); }
+.card h3, .card p {
+  padding: 10px;
+}

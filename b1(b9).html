@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đăng Ký</title>
+  <style>
+    .form-box {
+      border: 1px solid black;
+      width: 500px;
+      padding: 20px;
+      margin: auto;
+    }
+    h2 {
+      color: purple;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="form-box">
+  <h2>FORM ĐĂNG KÝ</h2>
+  <form id="registerForm" onsubmit="return validateForm()">
+    Họ: <input type="text" id="lastName"><br><br>
+    Tên: <input type="text" id="firstName"><br><br>
+    Ngày sinh: 
+    Ngày 
+    <select id="day">
+      <script>
+        for(let i=1; i<=31; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+    Tháng 
+    <select id="month">
+      <script>
+        for(let i=1; i<=12; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+    Năm 
+    <select id="year">
+      <script>
+        for(let i=1950; i<=2025; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select><br><br>
+    Giới tính: 
+    <input type="radio" name="gender" value="Nam"> Nam 
+    <input type="radio" name="gender" value="Nữ"> Nữ<br><br>
+    Số điện thoại: <input type="text" id="phone"><br><br>
+    Sở thích: 
+    <input type="checkbox" name="hobby" value="Đọc sách"> Đọc sách
+    <input type="checkbox" name="hobby" value="Xem phim"> Xem phim
+    <input type="checkbox" name="hobby" value="Nghe nhạc"> Nghe nhạc
+    <input type="checkbox" name="hobby" value="Đá bóng"> Đá bóng<br><br>
+    Khác: <br>
+    <textarea rows="3" cols="40"></textarea><br><br>
+    <input type="submit" value="Submit"> 
+    <input type="reset" value="Reset">
+  </form>
+</div>
+<script>
+  function validateForm() {
+    const lastName = document.getElementById("lastName").value.trim();
+    const firstName = document.getElementById("firstName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    if (!lastName || !firstName || !phone) {
+      alert("Vui lòng nhập đầy đủ Họ, Tên và Số điện thoại.");
+      return false;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Số điện thoại phải là 10 chữ số.");
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

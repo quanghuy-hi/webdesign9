@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi màu bằng JavaScript</title>
+    <style>
+        #text {
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">đổi màu tôi đi</p>
+    <button onclick="doiMau()">xanh</button>
+    <script>
+        function doiMau() {
+            document.getElementById("text").style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

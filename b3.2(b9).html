@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phép Toán và Đổi Màu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      padding: 8px;
+      vertical-align: middle;
+    }
+    input[type="text"], input[type="number"] {
+      width: 60px;
+      text-align: center;
+    }
+    .pheptoan span {
+      margin-right: 20px;
+    }
+    .red { 
+      color: red; 
+    }
+    .black {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<h2>Các phép toán</h2>
+<table>
+  <tr>
+    <td>Phép cộng</td>
+    <td><input id="cong1"></td>
+    <td>+</td>
+    <td><input id="cong2"></td>
+    <td>=</td>
+    <td><input id="ketquaCong" type="text" readonly></td>
+  </tr>
+  <tr>
+    <td>Phép trừ</td>
+    <td><input id="tru1"></td>
+    <td>-</td>
+    <td><input id="tru2"></td>
+    <td>=</td>
+    <td><input id="ketquaTru" type="text" readonly></td>
+  </tr>
+  <tr>
+    <td>Phép nhân</td>
+    <td><input id="nhan1"></td>
+    <td>*</td>
+    <td><input id="nhan2"></td>
+    <td>=</td>
+    <td><input id="ketquaNhan" type="text" readonly></td>
+  </tr>
+  <tr>
+    <td>Phép chia</td>
+    <td><input id="chia1"></td>
+    <td>/</td>
+    <td><input id="chia2"></td>
+    <td>=</td>
+    <td><input id="ketquaChia" type="text" readonly></td>
+  </tr>
+</table>
+<br>
+<button onclick="tinhToan()">Thực hiện phép toán</button>
+<h3>Các phép toán vừa thực hiện</h3>
+<div class="pheptoan result">
+  <span class="black" id="ptCong"></span><br>
+  <span class="black" id="ptTru"></span><br>
+  <span class="black" id="ptNhan"></span><br>
+  <span class="red" id="ptChia"></span>
+</div>
+<script>
+  function tinhToan() {
+    let a = parseFloat(document.getElementById("cong1").value) || 0;
+    let b = parseFloat(document.getElementById("cong2").value) || 0;
+    let c = parseFloat(document.getElementById("tru1").value) || 0;
+    let d = parseFloat(document.getElementById("tru2").value) || 0;
+    let e = parseFloat(document.getElementById("nhan1").value) || 0;
+    let f = parseFloat(document.getElementById("nhan2").value) || 0;
+    let g = parseFloat(document.getElementById("chia1").value) || 0;
+    let h = parseFloat(document.getElementById("chia2").value) || 0;
+
+    let tong = a + b;
+    let hieu = c - d;
+    let tich = e * f;
+    let thuong = h !== 0 ? (g / h).toFixed(2) : "Không chia được";
+
+    document.getElementById("ketquaCong").value = tong;
+    document.getElementById("ketquaTru").value = hieu;
+    document.getElementById("ketquaNhan").value = tich;
+    document.getElementById("ketquaChia").value = thuong;
+
+    document.getElementById("ptCong").textContent = `PHÉP CỘNG ${a} + ${b} = ${tong}`;
+    document.getElementById("ptTru").textContent = `PHÉP TRỪ ${c} - ${d} = ${hieu}`;
+    document.getElementById("ptNhan").textContent = `PHÉP NHÂN ${e} * ${f} = ${tich}`;
+    document.getElementById("ptChia").textContent = `PHÉP CHIA ${g} / ${h} = ${thuong}`;
+  }
+</script>
+</body>
+</html>
